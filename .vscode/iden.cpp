@@ -1,8 +1,8 @@
 #include<iostream>
 int main()
 {
-    int m=4;
-    int main=7;
+    int a=5;
+    int main=9;
     std::cout<<main<<std::endl<<m;
     return 0;
 }
