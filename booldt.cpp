@@ -1,11 +1,16 @@
 #include<iostream>
 using namespace std;
 int main(){
-    bool x=true;
-    //int x=54;
+    bool a=true;
+    void *ptr;
+    int x=54;
+    ptr=&x;
     //float y=45.56;
    // float z=x+y-true+false;
-    cout<<x<<endl;
-   // cout<<z<<endl;
+    cout<<a<<endl;
+    cout<<*(int*)ptr<<endl;
+    cout<<ptr<<endl;
+
+    //cout<<z<<endl;
     cout<<sizeof(bool);
 }
