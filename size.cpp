@@ -6,5 +6,5 @@ int main()
     cout<<"size offloat ="<<sizeof(float)<<endl;
     cout<<"size of double ="<<sizeof(double)<<endl;
     cout<<"size of bool ="<<sizeof(bool)<<endl;
-    cout<<"size of void ="<<sizeof(void)<<endl;
+    //cout<<"size of void ="<<sizeof(void)<<endl;
 }  
