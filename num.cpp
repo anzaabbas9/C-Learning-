@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int a=12;
+    int a=15;
     if(a%2==0)
     cout<<"even num";
     else
