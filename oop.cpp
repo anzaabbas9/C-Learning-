@@ -1,5 +1,5 @@
 #include<iostream>
-#include<string>
+//#include<string>
 using namespace std;
 class Teacher
 {
@@ -8,11 +8,26 @@ class Teacher
     public:
     string name;
     string depart;
-   // char grade;
-    // double salary;
-    void changedepart(string newdepart){
+     void changedepart(string newdepart){
     depart=newdepart;}
+   /* //non parametric constructor
+    Teacher(){
+        depart="ss";
+    }*/
+//parametric cons
+ Teacher(string name,string depart,double salary ){
+       this-> name=name;
+        this->depart=depart;
+       this-> salary=salary;
 
+    }
+    /* //copy cons
+    Teacher(Teacher &origobj){
+        cout<<"hey I'm copy constructer"<<endl;
+        this->name = origobj .name;
+        this->depart = origobj. depart;
+        this->salary = origobj. salary;
+    }*/
 //setter
 void setsalary(double s){
     salary=s;
@@ -22,16 +37,19 @@ double getsalary()
 {
     return salary;
 }
+void getinfo(){
+    cout<<"name: "<<name<<endl;
+    cout<<"depart:"<<depart<<endl;
+    cout<<"salary:"<<salary<<endl;
+}
 };
 int main(){
-    Teacher t1;
-    t1.name="ayesha";
-    t1.depart="computer science";
-    t1.setsalary(25000);
-   // t1.changedepart("EE");
-    cout<<"name="<<t1.name<<endl;
-    cout<<"depart="<<t1.depart<<endl;
-    cout<<"salary="<<t1.getsalary()<<endl;
+    Teacher t1("Maryam","computer science",52000);
+    Teacher t2(t1);
+   
+    
+  t2. getinfo();
+
 
 
 
