@@ -16,7 +16,7 @@ num=a;
 a=b;
 b=num;S
 cout<<a<<" "<<b;*/
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 int main(){
 int a,b;
@@ -45,4 +45,13 @@ switch(op)
     cout<<"invalid operater ";
 }
     return 0;
-    }
+    }*/
+   #include<iostream>
+   using namespace std;
+   int main(){
+    int a=4;
+    int b=8;
+    int c;
+    c=true+a-++a+--b;
+    cout<<c;
+   }
