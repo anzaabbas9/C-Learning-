@@ -3,20 +3,24 @@ using namespace std;
 class atm{
     private:
     double balance;
-   
+   //int pin;
     public:
-  double balance=50000;
+    atm(){
+ balance=50000;//initial balance
+ //cout<<"enter your pin"<<endl;
+ //cin>>pin;
+}
   //check balance  
 void checkbalance(){
-cout<<"your current balance is :"<<balance;
+cout<<"your current balance is :"<<balance<<endl;
 }
 //deposit cash
 void deposit(){
 double amount;
-cout <<"enter amount to deposit ";
+cout <<"enter amount to deposit "<<endl;;
 cin>>amount;
 balance=balance + amount;
-cout<<"amount deposit successfully";
+cout<<"amount deposit successfully"<<endl;
 }
 //withdraw
 void withdraw(){
@@ -25,9 +29,9 @@ cout<<"enter amount to withdraw";
 cin>>amount;
 if(amount>=balance){
 balance =balance-amount;
-cout<<"transaction successfull";}
+cout<<"transaction successfull"<<endl;}
 else
-cout<<"insufficient balance";
+cout<<"insufficient balance"<<endl;
 
 }
 
@@ -45,8 +49,9 @@ int main(){
     while(true){
         cout<<"enter choice:"<<endl;
         cin>>choice;
-        if(choice==4){
+       if(choice==4){
             cout<<"thank you for using ATM";
+            break;
         }
         switch(choice){
             case 1:
@@ -59,6 +64,7 @@ int main(){
             a1.withdraw();
             break;
             default:
+                   
             cout<<"invalid choice";
         }
     }
