@@ -17,7 +17,7 @@ class Area{
     }
     void area(){
         result=length*width;  //member function
-        cout<<"area:"<<area;
+        cout<<"area:"<<result<<endl;
     }
 
 };
