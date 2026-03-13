@@ -4,29 +4,33 @@ class student{
     public:
     string name;
     int rollno;
-    int cgpa;
-    student(string name,int rollno,int cgpa){
+    double *cgpaptr;
+    student(string name,int rollno,double cgpa){
         this->name=name;
         this->rollno=rollno;
-        this->cgpa=cgpa;
-
+        cgpaptr=new double;
+        *cgpaptr=cgpa;
     }
-    student(student &obj){
+    student (const student &obj){
          this->name=obj.name;
         this->rollno=obj.rollno;
-        this->cgpa=obj.cgpa;
+        cgpaptr = new double;
+       *cgpaptr=*obj.cgpaptr;
     }
     void getinfo(){
         cout<<"name:"<<name<<endl;
          cout<<"rollno:"<<rollno<<endl;
-         cout<<"cgpa:"<<cgpa<<endl;
+         cout<<"cgpa:"<<*cgpaptr<<endl;
         
     }
 };
 int main(){
     student s1("anza",1007,8.9);
     s1.getinfo();
-    student s2("zainab",1046,9.2);
+    //student s2("zainab",1046,7);
+    student s2(s1);
+    *(s2.cgpaptr)= 9.2;
     s2.getinfo();
+    s1.getinfo();
     return 0;
 }
