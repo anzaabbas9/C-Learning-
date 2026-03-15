@@ -15,7 +15,7 @@ int main(){
     }
     else
     
-        cout<<"let,s go to cofee shop"<<endl;
+    cout<<"let,s go to cofee shop"<<endl;
     cout<<"take some cofee"<<endl;
     cout<<"it's time to enjoy";
 }

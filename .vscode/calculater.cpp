@@ -18,14 +18,10 @@ result=a+b;
 return result;
  }
  double sub(){
-   
-   
     result =a-b;
     return result;
  }
  double mul(){
-    
-   
     result=a*b;
    return result;
 
