@@ -1,23 +1,23 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int ch;
-    cout<<"enter the choice";
+    char ch;
+    cout<<"enter the choice: ";
     cin>>ch;
-    switch(ch){
-        case 1:
+    switch(ch-2){
+        case 'a':
         cout<<"hey! i'm case 1"<<endl;
         break;
-         case 2:
+         case 'b':
         cout<<"hey! i'm case 2"<<endl;
         break;
-         case 3:
+         case 'c':
         cout<<"hey! i'm case 3"<<endl;
         break;
-         case 4:
+         case 'd':
         cout<<"hey! i'm case 4"<<endl;
         break;
-         case 5:
+         case 'e':
         cout<<"hey! i'm case 5"<<endl;
         break;
         default:
