@@ -1,72 +1,97 @@
 #include<iostream>
 using namespace std;
+
 class atm{
-    private:
+private:
     double balance;
-   //int pin;
-    public:
+    int pin;
+    int correctPin = 1234;
+
+public:
+    //non-paramitrized constructer
     atm(){
- balance=50000;//initial balance
- //cout<<"enter your pin"<<endl;
- //cin>>pin;
-}
-  //check balance  
-void checkbalance(){
-cout<<"your current balance is :"<<balance<<endl;
-}
-//deposit cash
-void deposit(){
-double amount;
-cout <<"enter amount to deposit "<<endl;;
-cin>>amount;
-balance=balance + amount;
-cout<<"amount deposit successfully"<<endl;
-}
-//withdraw
-void withdraw(){
-double amount ;
-cout<<"enter amount to withdraw";
-cin>>amount;
-if(amount>=balance){
-balance =balance-amount;
-cout<<"transaction successfull"<<endl;}
-else
-cout<<"insufficient balance"<<endl;
+        balance = 50000;
+        cout<<"Enter your PIN: ";
+        cin>>pin;
+        if(pin != correctPin){
+            cout<<"Wrong PIN. Access Denied."<<endl;
+            exit(0);
+        }
+    }
+    //changepin
+    void changepin(){
+            cout<<"enter new pin"<<endl;
+            cin>>pin;
+       
+    }
+    //check balance
+    void checkbalance(){
+        cout<<"Your current balance is: "<<balance<<endl;
+    }
+    //deposit money
+    void deposit(){
+        double amount;
+        cout<<"Enter amount to deposit: ";
+        cin>>amount;
+        balance = balance + amount;
+        cout<<"Amount deposited successfully"<<endl;
+    }
 
-}
-
+    //withdraw cash
+    void withdraw(){
+        double amount;
+        cout<<"Enter amount to withdraw: ";
+        cin>>amount;
+        if(amount <= balance){
+            balance = balance - amount;
+            cout<<"Transaction successful"<<endl;
+        }
+        else{
+            cout<<"Insufficient balance"<<endl;
+        }
+    }
 };
-//main func
 
 int main(){
     atm a1;
     int choice;
-    cout<<"****menu****"<<endl;
-    cout<<"1.check balance"<<endl;
-    cout<<"2.deposit cash"<<endl;
-    cout<<"3.withdraw money"<<endl;
-    cout<<"4.exit"<<endl;
+
+    cout<<"****MENU****"<<endl;
+    cout<<"1.change pin"<<endl;
+    cout<<"2. Check Balance"<<endl;
+    cout<<"3. Deposit Cash"<<endl;
+    cout<<"4. Withdraw Money"<<endl;
+    cout<<"5. Exit"<<endl;
+
     while(true){
-        cout<<"enter choice:"<<endl;
+        cout<<"Enter choice: ";
         cin>>choice;
-       if(choice==4){
-            cout<<"thank you for using ATM";
+
+        if(choice==5){
+            cout<<"Thank you for using ATM"<<endl;
             break;
         }
+
         switch(choice){
             case 1:
-            a1.checkbalance();
+            a1.changepin();
             break;
             case 2:
-            a1.deposit();
-            break;
+                a1.checkbalance();
+                break;
+
             case 3:
-            a1.withdraw();
-            break;
+                a1.deposit();
+                break;
+
+            case 4:
+                a1.withdraw();
+                break;
+
             default:
-                   
-            cout<<"invalid choice";
+                cout<<"Invalid choice"<<endl;
         }
     }
+
     return 0;
 }
