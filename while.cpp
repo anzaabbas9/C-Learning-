@@ -2,12 +2,19 @@
 using namespace std;
 int main(){
     int n;
-    while(n>2||n<7)
+    cout<<"enter number";
+    cin>>n;
+    bool flag=false;
+    while(!flag)
     {
-        cout<<"enter number";
-        cin>>n;
-        cout<<"valid number!!!!"<<"\n";
+       if(n<=2||n>=7){
+        cout<<"plz enter valid number"<<"\n";
+        cin>>n;}
+        else{
+            cout<<"valid number"<<"\n";
+            flag=true;
+        }
     }
-    cout<<"out of loop";
+    cout<<"thank u";
     return 0;
 }
