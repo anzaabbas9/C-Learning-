@@ -1,8 +1,11 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int i;
-    while(i=1){
+    int i=-32767;
+    while(i);
+    {
         cout<<i<<"\n";
+        i++;
     }
+    cout<<"out of loop";
 }
