@@ -1,8 +1,13 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 int main(){
-    int arr[]={2,3,5};
-    for(auto a:arr){
-        cout<<a<<" ";
+    int sum =0;
+    vector<int> a={4,6,5};
+    for(auto a:a){ 
+        cout<<a<<" "<<endl;
+         sum+=a;
+        
     }
+    cout<<sum;
 }
