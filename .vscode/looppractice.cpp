@@ -1,9 +1,11 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int i=0;
+    int i=10;
     do{
-        cout<<"hey! i'm do while loop";
+        cout<<"i="<<i<<endl;
+        i--;
 
-    }while(i>0);
+    }while(i>=1);
+    cout<<"out of loop";
 }
