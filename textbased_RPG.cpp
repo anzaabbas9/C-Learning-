@@ -69,5 +69,3 @@ e1.display_stats();
 
     return 0;
 }
-
-
