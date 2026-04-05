@@ -30,11 +30,9 @@ class Player{
 class human:public Player{
     public:
     human(string n):Player( n){
-
     }
     void makechoice(){
-       
-        cout<<"select  a choice (0.paper,1.sicssor,2.rock):";
+        cout<<"YOU, Enter your choice (0.Paper,1.Scissor,2.Rock):";
         cin>>choice;
         if(choice<0||choice>2){
             cout<<"invalid choice !! default to rock";
@@ -49,10 +47,8 @@ class computer:public Player{
     }
     void makechoice(){
       choice= rand()%3;
-      
-
+    cout<<getname()<<" chooses "<<choicetostring()<<endl;  
     }
-
 };
 class Game{
 private:
@@ -87,7 +83,7 @@ int main(){
     Game game (&h1,&c1);
     char playAgain;
     do{
-            cout<<"----Rock Paper Sicssor game----"<<endl;
+            cout<<"----Rock Paper Sicssor Game----"<<endl;
             game.playRound();
             cout<<"play again!!(y/n)"<<endl;
             cin>>playAgain;
