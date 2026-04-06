@@ -29,7 +29,7 @@ class Player{
 };
 class human:public Player{
     public:
-    human(string n):Player( n){
+    human(string n):Player(n){
     }
     void makechoice(){
         cout<<"YOU, Enter your choice (0.Paper,1.Scissor,2.Rock):";
