@@ -7,8 +7,8 @@ class Player{
     string name;
     int choice;
     public:
-    Player(string n){
-        name=n;
+    Player(){
+        
     }
     int  getchoice(){
         return choice;
@@ -29,9 +29,10 @@ class Player{
 };
 class human:public Player{
     public:
-    human(string n):Player(n){
-    }
+    
     void makechoice(){
+        cout<<"enter  human name:";
+        cin>>name;
         cout<<"YOU, Enter your choice (0.Paper,1.Scissor,2.Rock):";
         cin>>choice;
         if(choice<0||choice>2){
@@ -42,10 +43,12 @@ class human:public Player{
 };
 class computer:public Player{
     public:
-    computer(string n):Player(n){
+    computer():Player(){
         srand(time(0));
     }
     void makechoice(){
+        cout<<"enter  computer name:";
+        cin>> name;
       choice= rand()%3;
     cout<<getname()<<" chooses "<<choicetostring()<<endl;  
     }
@@ -78,8 +81,10 @@ int c2=p2->getchoice();
 }};
 int main(){
     srand(time(0));
-    human h1("Anza");
-    computer c1("boot AI");
+    human h1;
+    h1.makechoice();
+    computer c1;
+    c1.makechoice();
     Game game (&h1,&c1);
     char playAgain;
     do{
