@@ -29,10 +29,11 @@ class Player{
 };
 class human:public Player{
     public:
-    
+    human():Player(){
+cout<<"enter your name:";
+cin>>name;
+    }
     void makechoice(){
-        cout<<"enter  human name:";
-        cin>>name;
         cout<<"YOU, Enter your choice (0.Paper,1.Scissor,2.Rock):";
         cin>>choice;
         if(choice<0||choice>2){
@@ -43,12 +44,10 @@ class human:public Player{
 };
 class computer:public Player{
     public:
-    computer():Player(){
+    computer(string name):Player(){
         srand(time(0));
     }
-    void makechoice(){
-        cout<<"enter  computer name:";
-        cin>> name;
+    void makechoice(){ 
       choice= rand()%3;
     cout<<getname()<<" chooses "<<choicetostring()<<endl;  
     }
@@ -81,10 +80,8 @@ int c2=p2->getchoice();
 }};
 int main(){
     srand(time(0));
-    human h1;
-    h1.makechoice();
-    computer c1;
-    c1.makechoice();
+    human h1;   
+    computer c1("bot AI");
     Game game (&h1,&c1);
     char playAgain;
     do{
