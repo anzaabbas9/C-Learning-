@@ -1,32 +1,21 @@
-#include<iostream>
-#include<cstdlib>
-#include<ctime>
+#include <iostream>
 using namespace std;
-class quiz{
-    public:
-    char choice;
-   string data;
-    string question;
-    void display(){
-        
-        data="1 byte equals to:"
-        "1 nibble equals to:"
-        "1 MB equals to:";
-        question=rand()%40;
-        cout<<question <<endl;
-        //uestion="who is founder of pakistan?";
-       // question="who is national poet of pakistan ?";
-        cout<<"A.8 byte"<<"  "<<"B.4 byte"<<" "<<"C.1024 kb"<<endl;
-         cout<<"enter your choice:";
-        cin>>choice;
-        if(choice=='B'||choice=='b')
-        cout<<"correct answer"<<endl;
-        else
-        cout<<"wrong!! ";
-    }
+
+class quiz
+{
+public:
+    int choice;
+    int score = 0;
+
+    string question[3] = {
+        "what is 3+3 ?",
+        "who is founder of pakistan?",
+        "what is 3*3?"};
+
+    string option[3][3] = {
+        {"5", "6", "7"},
+        {"Quaid-e-azam", "Iqbal", "sir syed"},
+        {"7", "6", "9"}};
+
+    int answer[3] = {1, 0, 2};
 };
-int main(){
-    srand(time(0));
-    quiz q1;
-    q1.display();
-}
