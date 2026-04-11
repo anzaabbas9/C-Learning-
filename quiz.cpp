@@ -1,37 +1,21 @@
-#include<iostream>
-#include<cstdlib>
-#include<ctime>
+#include <iostream>
 using namespace std;
-class quiz{
-  public:
+
+class quiz
+{
+public:
     int choice;
-    int score=0;
-    string question[3]={"what is 3+3 ?" ,
-    "who is founder of pakistan?","what is 3*3?"};
-    string option[3][3]={{"5 ","6" ,"7 "},{"quaid-e-azam",  "iqbal", "sirsayyed " },{"7","6","9"}};
-   int answer[3]={1,0,2};
-    
-    // member functions
-  void finalquiz(){
-    
-    for(int i=0;i<3;i++){
-    cout<<question[i]<<endl;
-     for(int j=0;j<3;j++){
-    cout<<j<<":"<<option[i][j]<<" ";
-    cout<<"enter your choice:";
-    cin>>choice;
-        if(answer[i]==choice){
-       cout<<"correct!!"<<endl;
-         score++;}
-         else{
-        cout<<"wrong!! correct answer is "<<option[i][answer[i]]<<endl;}}
+    int score = 0;
 
-    cout<<"your final score is"<<score;
-    }
-  }};
+    string question[3] = {
+        "what is 3+3 ?",
+        "who is founder of pakistan?",
+        "what is 3*3?"};
 
-//main function
-int main(){
-    quiz q1;
-    q1.finalquiz();
-}
+    string option[3][3] = {
+        {"5", "6", "7"},
+        {"Quaid-e-azam", "Iqbal", "sir syed"},
+        {"7", "6", "9"}};
+
+    int answer[3] = {1, 0, 2};
+};
