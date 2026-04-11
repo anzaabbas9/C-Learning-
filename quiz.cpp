@@ -3,30 +3,35 @@
 #include<ctime>
 using namespace std;
 class quiz{
-    public:
-    char choice;
-   string data;
-    string question;
-    void display(){
-        
-        data="1 byte equals to:"
-        "1 nibble equals to:"
-        "1 MB equals to:";
-        question=rand()%40;
-        cout<<question <<endl;
-        //uestion="who is founder of pakistan?";
-       // question="who is national poet of pakistan ?";
-        cout<<"A.8 byte"<<"  "<<"B.4 byte"<<" "<<"C.1024 kb"<<endl;
-         cout<<"enter your choice:";
-        cin>>choice;
-        if(choice=='B'||choice=='b')
-        cout<<"correct answer"<<endl;
-        else
-        cout<<"wrong!! ";
+  public:
+    int choice;
+    int score=0;
+    string question[3]={"what is 3+3 ?" ,
+    "who is founder of pakistan?","what is 3*3?"};
+    string option[3][3]={{"5 ","6" ,"7 "},{"quaid-e-azam",  "iqbal", "sirsayyed " },{"7","6","9"}};
+   int answer[3]={1,0,2};
+    
+    // member functions
+  void finalquiz(){
+    
+    for(int i=0;i<3;i++){
+    cout<<question[i]<<endl;
+     for(int j=0;j<3;j++){
+    cout<<j<<":"<<option[i][j]<<" ";
+    cout<<"enter your choice:";
+    cin>>choice;
+        if(answer[i]==choice){
+       cout<<"correct!!"<<endl;
+         score++;}
+         else{
+        cout<<"wrong!! correct answer is "<<option[i][answer[i]]<<endl;}}
+
+    cout<<"your final score is"<<score;
     }
-};
+  }};
+
+//main function
 int main(){
-    srand(time(0));
     quiz q1;
-    q1.display();
+    q1.finalquiz();
 }
