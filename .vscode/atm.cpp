@@ -15,7 +15,6 @@ public:
         cin>>pin;
         if(pin != correctPin){
             cout<<"Wrong PIN. Access Denied."<<endl;
-            exit(0);
         }
     }
     //changepin
