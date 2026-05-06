@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 int main()
 {
@@ -31,4 +31,72 @@ int main()
             cout << arr[i] << " ";
         }
     }
+}*/
+/*#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[5];
+    int temp;
+    cout<<"enter values:";
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> arr[i];
+    }
+    for (int i = 0; i < 5/2; i++)
+    {
+        if(arr[i]%2==0){
+        temp = arr[i];
+        arr[i]=arr[5-1-i];
+         arr[5-1-i]=temp;}
+}
+ for (int i = 0; i < 5; i++)
+    {
+        cout<<arr[i]<<"\t";
+    }
+}*/
+/*#include <iostream>
+using namespace std;
+int main()
+{
+    int arr[] = {2, 3, 5, 7, 8};
+    int n;
+    int target;
+    cout << "enter target value:";
+    cin >> target;
+    cout << "enter length of array:";
+    cin >> n;
+    for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < n; j++)
+        {
+            cout << "(" << arr[i] << "," << arr[j] << ")" << "\t";
+        }
+        cout<<endl<<"target pairs are:";
+            for (int i = 0; i < n; i++)
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[i] + arr[j] == target && i < j)
+            {
+                cout << arr[i] << "," << arr[j]<<endl;
+            }
+            
+        }*/
+       #include <iostream>
+using namespace std;
+int main()
+{
+    int num=12345;
+    int org;
+    int rev=0;
+  //int arr[5]={1,2,3,4,5};
+  //for(int i=0;i<5;i++) 
+ // cout<<arr[i];
+   //for(int i=0;i<5;i++){
+    org=num;
+    rev+=num%10;
+    num=num/10;
+    cout<<rev;
+
+   
+           
 }
