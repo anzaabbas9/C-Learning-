@@ -79,24 +79,41 @@ int main()
             {
                 cout << arr[i] << "," << arr[j]<<endl;
             }
-            
+
         }*/
-       #include <iostream>
+#include <iostream>
 using namespace std;
 int main()
 {
-    int num=12345;
-    int org;
-    int rev=0;
-  //int arr[5]={1,2,3,4,5};
-  //for(int i=0;i<5;i++) 
- // cout<<arr[i];
-   //for(int i=0;i<5;i++){
-    org=num;
-    rev+=num%10;
-    num=num/10;
-    cout<<rev;
-
-   
-           
+    int temp = 0;
+    cout << "original array";
+    int arr[5] = {1, 2, 3, 4, 5};
+    for (int i = 0; i < 5; i++)
+        cout << arr[i];
+    cout << endl;
+    /*for(int i=0;i<5/2;i++){
+   temp=arr[i];
+arr[i]=arr[5-1-i];
+arr[5-1-i]=temp;}
+cout<<"reverse array:";
+ for(int i=0;i<5;i++){
+    cout<<arr[i];}*/
+    for (int i = 0; i < 5; i++)
+    {
+        if (arr[i] % 2 != 0)
+        {
+            temp = arr[i];
+            int j = i;
+        while (j > 0 && arr[j - 1] % 2 == 0)
+        {            arr[j] = arr[j - 1];
+            j--;
+        }
+        arr[j] = temp;
+    }
+    }
+    cout << "final result:";
+    for (int i = 0; i < 5; i++)
+    {
+        cout << arr[i];
+    }
 }
