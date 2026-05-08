@@ -85,19 +85,19 @@ int main()
 using namespace std;
 int main()
 {
-    int temp = 0;
+    /*int temp = 0;
     cout << "original array";
     int arr[5] = {1, 2, 3, 4, 5};
     for (int i = 0; i < 5; i++)
         cout << arr[i];
     cout << endl;
-    /*for(int i=0;i<5/2;i++){
+    for(int i=0;i<5/2;i++){
    temp=arr[i];
 arr[i]=arr[5-1-i];
 arr[5-1-i]=temp;}
 cout<<"reverse array:";
  for(int i=0;i<5;i++){
-    cout<<arr[i];}*/
+    cout<<arr[i];}
     for (int i = 0; i < 5; i++)
     {
         if (arr[i] % 2 != 0)
@@ -116,4 +116,19 @@ cout<<"reverse array:";
     {
         cout << arr[i];
     }
+}*/
+    int arr[5] = {2, 66, 75, 100, 104};
+    int max = INT_MIN;
+    int min = INT_MAX;
+    for (int i = 0; i < 5; i++)
+    {
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+        if (arr[i] < min)
+            min = arr[i];
+    }
+    cout << "maximum value is:" << max<<endl;
+    cout << "minimum value is:" << min;
 }
