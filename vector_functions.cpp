@@ -8,20 +8,20 @@ int main()
     vector<int>u(5,2);
      v.swap (u);
     vector<int >::iterator it;*/
-    //it=v.begin();
-    //v.insert(it+4,2);
-    //v.at(2)=4;
-    //v.push_back(3);
-    //it=v.begin();
-    //v.erase(it,it+2);
-    //cout<<"elements of v are:";
-    //for(it=v.begin();it<v.end();it++){
-    //cout<<*it<<" ";}
-    //cout<<endl;
-    //v.clear();
-    //cout<<"first element is:"<<v.front()<<" ";
-     //cout<<"last element is:"<<v.back()<<" ";
-     //cout<<endl;
+   /* it=v.begin();
+    v.insert(it+4,2);
+    v.at(2)=4;
+    v.push_back(3);
+    it=v.begin();
+    v.erase(it,it+2);
+    cout<<"elements of v are:";
+  for(it=v.begin();it<v.end();it++){
+  cout<<*it<<" ";}
+    cout<<endl;
+    v.clear();
+    cout<<"first element is:"<<v.front()<<" ";
+    cout<<"last element is:"<<v.back()<<" ";
+    cout<<endl;*/
      /*cout<<"elements of v after clear:";
      for(int i=0;i<v.size();i++){
     cout<<v.at(i)<<" ";}
@@ -30,12 +30,12 @@ int main()
      for(int i=0;i<u.size();i++){
         cout<<u.at(i)<<"  ";
      }*/
-    vector<int>v={4,6,7,9,10,3};
-    //vector<int>::iterator it;
-    //v.insert(v.begin()+2,2,30);
+   /* vector<int>v={4,6,7,9,10,3};
+    vector<int>::iterator it;
+    v.insert(v.begin()+2,2,30);
     vector<int>::iterator it;
     it=v.begin();
-    //sort(v.begin(),v.end());
+    sort(v.begin(),v.end());
     cout<<"vector element:";
     while(it!=v.end()){
       if(*it%2==0){
@@ -46,7 +46,7 @@ int main()
     }
     for(auto n:v){
       cout<<n<<" ";
-    }
+    }*/
    /* cout<<"size is :"<<v.size()<<endl;
     cout<<"max_size is :"<<v.max_size()<<endl;
     cout<<"capacity is :"<<v.capacity()<<endl;
@@ -61,5 +61,15 @@ int main()
     }cout<<endl;
     v.shrink_to_fit();
    cout<<"capacity after fix is :"<<v.capacity()<<endl; */
+   vector<int>v={2,-1,6,10,0};
+   vector<int>::iterator i;
+   i=v.begin();
+   for(auto n:v){
+    if(*i>n){
+      *i=n;
+    }
+    n++;
+   }
+   cout<<"max value is:" <<*i;
 }   
 
