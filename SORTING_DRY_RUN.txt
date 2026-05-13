@@ -1,0 +1,154 @@
+================================================================================
+                    ARRAY SORTING - STEP BY STEP DRY RUN
+================================================================================
+
+INITIAL UNSORTED ARRAY:
+Original: [45, 12, 78, 23, 56, 89, 34, 1, 90, 5]
+Index:     [0,  1,  2,  3,  4,  5,  6,  7, 8,  9]
+
+================================================================================
+                    METHOD 1: BUILT-IN sort() FUNCTION
+================================================================================
+
+This uses C++'s built-in sort() function which is optimized internally.
+Complexity: O(n log n) - Very Fast
+Algorithm: Uses QuickSort/IntroSort
+
+Command: sortArrayBuiltIn(unsorted);
+
+Output:
+Sorted with built-in sort(): 1 5 12 23 34 45 56 78 89 90
+
+Explanation:
+- The sort() function rearranges elements in ascending order
+- It handles all the comparisons and swaps internally
+- This is the FASTEST method for production code
+- Just ONE line of code does everything!
+
+================================================================================
+                    METHOD 2: BUBBLE SORT (EDUCATIONAL)
+================================================================================
+
+This sorts by comparing adjacent elements and swapping them if needed.
+Complexity: O(n²) - Slower, but shows how sorting works internally
+Algorithm: Compare and swap adjacent elements multiple times
+
+Initial Array: [45, 12, 78, 23, 56, 89, 34, 1, 90, 5]
+
+--- PASS 1 (i=0) ---
+Compare & swap adjacent pairs until largest element "bubbles" to end:
+
+Step 1: Compare 45 > 12? YES → Swap  [12, 45, 78, 23, 56, 89, 34, 1, 90, 5]
+Step 2: Compare 45 > 78? NO            [12, 45, 78, 23, 56, 89, 34, 1, 90, 5]
+Step 3: Compare 78 > 23? YES → Swap   [12, 45, 23, 78, 56, 89, 34, 1, 90, 5]
+Step 4: Compare 78 > 56? YES → Swap   [12, 45, 23, 56, 78, 89, 34, 1, 90, 5]
+Step 5: Compare 78 > 89? NO            [12, 45, 23, 56, 78, 89, 34, 1, 90, 5]
+Step 6: Compare 89 > 34? YES → Swap   [12, 45, 23, 56, 78, 34, 89, 1, 90, 5]
+Step 7: Compare 89 > 1?  YES → Swap   [12, 45, 23, 56, 78, 34, 1, 89, 90, 5]
+Step 8: Compare 89 > 90? NO            [12, 45, 23, 56, 78, 34, 1, 89, 90, 5]
+Step 9: Compare 90 > 5?  YES → Swap   [12, 45, 23, 56, 78, 34, 1, 89, 5, 90]
+                                        ↑ 90 is now in correct position (sorted)
+
+After Pass 1: [12, 45, 23, 56, 78, 34, 1, 89, 5, 90]
+               Largest element (90) is now at the end ✓
+
+--- PASS 2 (i=1) ---
+Now we ignore the last element (already sorted) and repeat for remaining:
+[12, 45, 23, 56, 78, 34, 1, 89, 5] | 90
+
+After Pass 2: [12, 23, 45, 56, 34, 1, 78, 5, 89] | 90
+               Second largest (89) is in place ✓
+
+--- PASS 3-9 (i=2 to i=8) ---
+This continues for each element, each pass moving the next largest to its position.
+
+FINAL SORTED ARRAY: [1, 5, 12, 23, 34, 45, 56, 78, 89, 90]
+
+Output:
+Sorted with bubble sort: 1 5 12 23 34 45 56 78 89 90
+
+Key Points:
+✓ We make (n-1) passes where n = array size
+✓ In pass i, we compare n-i-1 pairs
+✓ After each pass, one more element reaches its final position
+✓ Total comparisons: 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 45 operations
+
+Why it's called "BUBBLE" sort:
+→ Like bubbles in water, the largest elements "bubble up" to the end with each pass
+
+================================================================================
+                    METHOD 3: SORT IN DESCENDING ORDER
+================================================================================
+
+This sorts elements from largest to smallest.
+Complexity: O(n log n) - Same as regular sort but with greater<int>()
+
+Original: [45, 12, 78, 23, 56, 89, 34, 1, 90, 5]
+Command: sortArrayDescending(unsorted);
+
+Output:
+Sorted in descending order: 90 89 78 56 45 34 23 12 5 1
+
+Explanation:
+- Uses sort() with greater<int>() comparator
+- This tells sort() to arrange in DESCENDING order instead of ascending
+- Same speed as regular sort (O(n log n))
+- Just add "greater<int>()" as third parameter
+
+================================================================================
+                           PROGRAM EXECUTION FLOW
+================================================================================
+
+1. Create unsorted array: [45, 12, 78, 23, 56, 89, 34, 1, 90, 5]
+
+2. Display original:
+   Original unsorted array: 45 12 78 23 56 89 34 1 90 5
+
+3. Make a copy and sort with method 1:
+   Sorted with built-in sort(): 1 5 12 23 34 45 56 78 89 90
+
+4. Make another copy and sort with method 2:
+   Sorted with bubble sort: 1 5 12 23 34 45 56 78 89 90
+
+5. Make another copy and sort with method 3:
+   Sorted in descending order: 90 89 78 56 45 34 23 12 5 1
+
+6. Program ends (return 0)
+
+================================================================================
+                           COMPARISON TABLE
+================================================================================
+
+Method              | Time      | Space | Speed   | When to Use
+--------------------|-----------|-------|---------|--------------------------------
+Built-in sort()     | O(n log n)| O(1)  | ⚡⚡⚡⚡⚡ | Production code, real projects
+Bubble Sort         | O(n²)     | O(1)  | ⚡      | Learning, understanding sorting
+Descending sort()   | O(n log n)| O(1)  | ⚡⚡⚡⚡⚡ | When you need reverse order
+
+================================================================================
+                           COMPLETE PROGRAM OUTPUT
+================================================================================
+
+When you run the program, you should see:
+
+Original unsorted array: 45 12 78 23 56 89 34 1 90 5 
+Sorted with built-in sort(): 1 5 12 23 34 45 56 78 89 90 
+Sorted with bubble sort: 1 5 12 23 34 45 56 78 89 90 
+Sorted in descending order: 90 89 78 56 45 34 23 12 5 1 
+
+================================================================================
+                           QUICK SUMMARY
+================================================================================
+
+✓ Original Array:       [45, 12, 78, 23, 56, 89, 34, 1, 90, 5]
+✓ After Sorting:        [1, 5, 12, 23, 34, 45, 56, 78, 89, 90]
+✓ After Descending:     [90, 89, 78, 56, 45, 34, 23, 12, 5, 1]
+
+Key Concepts:
+1. Sorting arranges elements in order (ascending or descending)
+2. Built-in sort() is FAST and RECOMMENDED (O(n log n))
+3. Bubble sort is SLOW but EDUCATIONAL for learning (O(n²))
+4. Different algorithms have different performance characteristics
+5. Choose the right tool for the job!
+
+================================================================================
