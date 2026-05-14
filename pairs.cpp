@@ -1,46 +1,52 @@
-#include<iostream>
-#include<utility>
+// Store a student's name and marks as a pair and print them.
+/* #include <iostream>
+#include <utility>
 using namespace std;
 int main()
 {
-    /* pair<int,string>p1;
-    p1=make_pair(1,"hello");
-    cout<<"first element is:"<<p1.first<<" ";
-    cout<<"second element is:"<<p1.second<<" ";
-    cout<<endl;
-    pair<int,string>p2(2,"world");
-    cout<<"first element is:"<<p2.first<<" ";
-    cout<<"second element is:"<<p2.second<<" ";
-    cout<<endl;
-    pair<int,string>p3(p1);
-    cout<<"first element is:"<<p3.first<<" ";
-    cout<<"second element is:"<<p3.second<<" ";
-    cout<<endl;
-    pair<int,string>p4=make_pair(3,"welcome");
-    cout<<"first element is:"<<p4.first<<" ";
-    cout<<"second element is:"<<p4.second<<" ";
-    return 0; */
-    pair<int,float>p1;
-    p1=make_pair(2,4.7);
-    /*  pair<int,bool>p2;
-    p2=make_pair(4,false); 
-    pair<int,float>p3(p1); */
-    pair<int,float>p4(4,3.9);
-    cout<<"first element of p1 is:"<<p1.first<<endl;
-    cout<<"second element of p1 is:"<<p1.second<<endl;
-    /* cout<<"first element of p2 is:"<<p2.first<<endl;
-    cout<<"second element of p2 is:"<<p2.second<<endl;
-    cout<<"first element of p3 is:"<<p3.first<<endl;
-    cout<<"second element of p3 is:"<<p3.second<<endl; */
-    cout<<"first element of p4 is:"<<p4.first<<endl;
-    cout<<"second element of p4 is:"<<p4.second<<endl;
-    p1.swap(p4);
-    cout<<"after swap:"<<endl;
-    cout<<"first element of p1 is:"<<p1.first<<endl;
-    cout<<"second element of p1 is:"<<p1.second<<endl;
-     cout<<"first element of p4 is:"<<p4.first<<endl;
-    cout<<"second element of p4 is:"<<p4.second<<endl;
- cout<<"comparison of p1&p4:"<<"\n";
- cout<<((p1>=p4)?"p1 is greater than p4":"p1 is not greater than p4")<<"\n";
+    pair<string, float> p;
+    p = make_pair(string("anza"), 151.0f);
+    cout << "Name: " << p.first << ", Marks: " << p.second << endl;
+    return 0;
+} */
+// Given a vector of pairs (name, score), sort them by score in descending order and print the leaderboard.
+/* #include <iostream>
+#include <vector>
+#include <utility>
+#include <algorithm>
+using namespace std;
+int main()
+{
+    vector<pair<string, int>> v;
+    v.push_back({"anu", 200});
+    v.push_back({"ali", 300});
+    v.push_back({"aliya", 2400});
+    sort(v.begin(), v.end(), [](auto a, auto b)
+         { return a.second > b.second; });
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout << v[i].first << " " << v[i].second << endl;
+    } */
+
+// Given a list of intervals as pairs (start, end), merge all overlapping intervals and print the result.
+#include<iostream>
+#include <vector>
+#include <utility>
+#include <algorithm>
+using namespace std;
+int main(){
+    vector<pair<int,int>> v;
+   v.push_back({1, 3});
+v.push_back({2, 6});
+v.push_back({8, 10});
+v.push_back({15, 18});
+    sort(v.begin(),v.end(),[](auto a,auto b)
+{
+    return a.first<b.first;
+});
+   for (int i = 0; i < v.size(); i++)
+    {
+        cout << v[i].first << " " << v[i].second << endl;
+    }
 }
 
