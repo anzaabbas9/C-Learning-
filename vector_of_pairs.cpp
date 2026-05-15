@@ -53,4 +53,23 @@ using namespace std;
 int main()
 {
     vector<pair<int, int>> v;
+    v.push_back({1,2});
+    v.push_back({3,4});
+    v.push_back({5,6});
+    v.push_back({7,8});
+    vector<int>adj[9];
+    for(int i=0;i<v.size();i++){
+        int u=v[i].first;
+        int v1=v[i].second;
+        adj[u].push_back(v1);
+        adj[v1].push_back(u);
+    }
+     for(int i = 1; i <= 8; i++){
+    cout << i << " -> ";
+    for(int j = 0; j < adj[i].size(); j++)
+        cout << adj[i][j] << " ";
+    cout << endl;
+}
+}
+
 
