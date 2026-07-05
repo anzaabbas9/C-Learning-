@@ -18,7 +18,7 @@ int main()
         if (password[i] >= 'A' && password[i] <= 'Z')
         {
             hasletter = true;
-        }
+    }
     }
     if (len >= 8){
         if (hasdigit && hasletter)
@@ -34,7 +34,7 @@ int main()
         cout<<"reenter password atleast of given length"<<endl;
     return 0;
 }*/
-#include <iostream>
+/*#include <iostream>
 #include <cstring>
 using namespace std;
 int main()
@@ -56,5 +56,39 @@ int main()
            cout<<"palindrome !!";
            else
            cout<<"not palindrome";
-        
-    return 0;}
+
+    return 0;}*/
+/*3. Word Counter and Longest Word Finder
+Take a full sentence with cin.getline(). Using strtok(), split it into words and:
+
+Count how many words there are
+Find and print the longest word (use strlen() inside the loop to compare lengths)
+Bonus: also print how many vowels appear across the whole sentence*/
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main()
+{
+    char ch[50];
+    int maxlen = 0;
+    char largech[50];
+    cout << "enter a line: " << endl;
+    cin.getline(ch, 50);
+    char *token = strtok(ch, " ");
+    int len = strlen(ch);
+    int count = 0;
+    while (token != NULL)
+    {
+         if (strlen(token) > maxlen)
+        {
+            maxlen = strlen(token);
+            strcpy(largech, token);
+        }
+    count++;
+        token = strtok(NULL, " ");
+    }
+    cout << count<<endl;
+    cout << largech<<endl;
+    cout << maxlen<<endl;
+    return 0;
+}
